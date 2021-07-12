@@ -89,7 +89,7 @@ RSpec.describe User, type: :model do
         it 'first_nameが全角ひらがなカタカナ漢字のみでなければ新規登録できない' do
           @user.first_name = 'yamada'
           @user.valid?
-          expect(@user.errors.full_messages).to include ("First name First name is invalid. Input full-width characters")
+          expect(@user.errors.full_messages).to include ("First name is invalid. Input full-width characters")
         end
         it 'last_nameが空では新規登録できない' do
           @user.last_name = ''
@@ -99,7 +99,7 @@ RSpec.describe User, type: :model do
         it 'last_nameが全角ひらがなカタカナ漢字のみでなければ新規登録できない' do
           @user.last_name = 'tarou'
           @user.valid?
-          expect(@user.errors.full_messages).to include ("Last name Last name is invalid. Input full-width characters")
+          expect(@user.errors.full_messages).to include ("Last name is invalid. Input full-width characters")
         end
         it 'first_name_kanaが空では新規登録できない' do
           @user.first_name_kana = ''
@@ -109,7 +109,7 @@ RSpec.describe User, type: :model do
         it 'first_name_kanaが全角カタカナのみでなければ新規登録できない' do
           @user.first_name_kana = 'yamada'
           @user.valid?
-          expect(@user.errors.full_messages).to include ("First name kana First name kana is invalid. Input full-width katakana characters")
+          expect(@user.errors.full_messages).to include ("First name kana is invalid. Input full-width katakana characters")
         end
         it 'last_name_kanaが空では新規登録できない' do
           @user.last_name_kana = ''
@@ -119,7 +119,7 @@ RSpec.describe User, type: :model do
         it 'last_name_kanaが全角カタカナのみでなければ新規登録できない' do
           @user.last_name_kana = 'tarou'
           @user.valid?
-          expect(@user.errors.full_messages).to include ("Last name kana Last name kana is invalid. Input full-width katakana characters")
+          expect(@user.errors.full_messages).to include ("Last name kana is invalid. Input full-width katakana characters")
         end
         it 'birth_dayが空では新規登録できない' do
           @user.birth_day = ''
